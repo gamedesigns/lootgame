@@ -18,7 +18,7 @@ pub fn generate_loot_boxes_system(mut commands: Commands, player_query: Query<&P
         };
 
         let items = vec![
-            commands.spawn().insert(Item {
+            commands.spawn((Item {
                 rarity: match rng.gen_range(0..5) {
                     0 => ItemRarity::Common,
                     1 => ItemRarity::Uncommon,
@@ -36,10 +36,10 @@ pub fn generate_loot_boxes_system(mut commands: Commands, player_query: Query<&P
                     4 => ItemCategory::Potion,
                     _ => ItemCategory::Equipment,
                 },
-            }).id(),
+            },)).id(),
         ];
 
-        commands.spawn().insert(LootBox {
+        commands.spawn(LootBox {
             rarity,
             items,
         });

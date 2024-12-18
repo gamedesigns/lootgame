@@ -6,7 +6,7 @@ pub struct ItemPlugin;
 
 impl Plugin for ItemPlugin {
     fn build(&self, app: &mut App) {
-        app.add_system(equip_item_system)
-            .add_system(sell_item_system);
+        app.add_systems(Update, equip_item_system)
+            .add_systems(Update, sell_item_system);
     }
 }

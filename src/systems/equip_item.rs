@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 use crate::components::item_components::Item;
 use crate::components::player_components::{Player, EquippedItems};
-use std::collections::HashMap;
 
 pub fn equip_item_system(
     mut commands: Commands,
@@ -12,8 +11,7 @@ pub fn equip_item_system(
     let items: Vec<(Entity, &Item)> = item_query.iter().collect();
 
     for (item_entity, item) in items {
-        if equipped_items.items.contains_key(&item.category) {
-            let old_item_entity = equipped_items.items.get(&item.category).unwrap();
+        if let Some(old_item_entity) = equipped_items.items.get(&item.category) {
             if let Some(old_item) = commands.get_entity(*old_item_entity) {
                 player.score -= old_item.score_bonus;
             }

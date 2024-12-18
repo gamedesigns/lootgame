@@ -1,14 +1,16 @@
 use bevy::prelude::*;
 
-#[derive(Component)]
-pub struct Item {
-    pub rarity: ItemRarity,
-    pub value: u32,
-    pub score_bonus: u32,
-    pub category: ItemCategory,
+#[derive(Component, Clone, Copy, PartialEq, Eq, Hash)]
+pub enum ItemCategory {
+    BodyArmor,
+    Helmet,
+    Weapon,
+    Shield,
+    Potion,
+    Equipment,
 }
 
-#[derive(Clone, Copy, PartialEq, Eq)]
+#[derive(Component, Clone, Copy, PartialEq, Eq)]
 pub enum ItemRarity {
     Common,
     Uncommon,
@@ -17,12 +19,10 @@ pub enum ItemRarity {
     Legendary,
 }
 
-#[derive(Clone, Copy, PartialEq, Eq, Hash, Eq)]
-pub enum ItemCategory {
-    BodyArmor,
-    Helmet,
-    Weapon,
-    Shield,
-    Potion,
-    Equipment,
+#[derive(Component)]
+pub struct Item {
+    pub rarity: ItemRarity,
+    pub value: u32,
+    pub score_bonus: u32,
+    pub category: ItemCategory,
 }

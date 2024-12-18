@@ -1,7 +1,6 @@
 use bevy::prelude::*;
 use crate::components::player_components::{Player, EquippedItems};
 use std::collections::HashMap;
-use crate::components::item_components::ItemCategory;
 
 pub struct PlayerPlugin;
 

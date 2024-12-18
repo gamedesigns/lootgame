@@ -5,6 +5,6 @@ pub struct LevelingPlugin;
 
 impl Plugin for LevelingPlugin {
     fn build(&self, app: &mut App) {
-        app.add_system(level_up_system);
+        app.add_systems(Update, level_up_system);
     }
 }

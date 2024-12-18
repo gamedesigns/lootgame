@@ -12,7 +12,7 @@ pub fn sell_item_system(
 
     for (item_entity, item) in items {
         player.money += item.value;
-        equipped_items.items.retain(|&x| x != item_entity);
+        equipped_items.items.retain(|&x, _| x != item_entity);
         commands.entity(item_entity).despawn();
     }
 }

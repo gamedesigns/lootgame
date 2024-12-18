@@ -7,8 +7,8 @@ pub struct LootBoxPlugin;
 
 impl Plugin for LootBoxPlugin {
     fn build(&self, app: &mut App) {
-        app.add_system(generate_loot_boxes_system)
-            .add_system(choose_loot_box_system)
-            .add_system(open_loot_box_system);
+        app.add_systems(Update, generate_loot_boxes_system)
+            .add_systems(Update, choose_loot_box_system)
+            .add_systems(Update, open_loot_box_system);
     }
 }
