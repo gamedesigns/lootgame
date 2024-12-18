@@ -17,7 +17,7 @@ pub enum ItemRarity {
     Legendary,
 }
 
-#[derive(Clone, Copy, PartialEq, Eq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Eq)]
 pub enum ItemCategory {
     BodyArmor,
     Helmet,

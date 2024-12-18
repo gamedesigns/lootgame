@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use crate::components::item_components::ItemCategory;
+use std::collections::HashMap;
 
 #[derive(Component)]
 pub struct Player {
