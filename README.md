@@ -1,0 +1,2 @@
+# lootgame
+Rust demo example
