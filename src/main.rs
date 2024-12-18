@@ -1,6 +1,11 @@
 use bevy::prelude::*;
 use plugins::{PlayerPlugin, LootBoxPlugin, ItemPlugin, LevelingPlugin, UiPlugin};
 
+mod components;
+mod resources;
+mod systems;
+mod plugins;
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
