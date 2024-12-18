@@ -2,14 +2,14 @@ use bevy::prelude::*;
 use crate::components::item_components::ItemCategory;
 use std::collections::HashMap;
 
-#[derive(Resource)]
+#[derive(Component, Resource)]
 pub struct Player {
     pub level: u32,
     pub money: u32,
     pub score: u32,
 }
 
-#[derive(Resource)]
+#[derive(Component, Resource)]
 pub struct EquippedItems {
     pub items: HashMap<ItemCategory, Entity>,
 }

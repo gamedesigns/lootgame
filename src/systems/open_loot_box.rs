@@ -13,7 +13,7 @@ pub fn open_loot_box_system(
 
     for (loot_box_entity, loot_box) in loot_boxes {
         for item_entity in &loot_box.items {
-            if let Some(item) = commands.get_entity(*item_entity) {
+            if let Ok(item) = commands.get_entity(*item_entity) {
                 // Add item to player's inventory
                 player.score += item.score_bonus;
             }

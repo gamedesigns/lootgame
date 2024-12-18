@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use std::fmt;
 
 #[derive(Component, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum ItemCategory {
@@ -7,7 +8,13 @@ pub enum ItemCategory {
     Weapon,
     Shield,
     Potion,
-    Equipment,
+    Equipent,
+}
+
+impl fmt::Display for ItemCategory {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
 #[derive(Component, Clone, Copy, PartialEq, Eq)]
@@ -17,6 +24,12 @@ pub enum ItemRarity {
     Rare,
     Epic,
     Legendary,
+}
+
+impl fmt::Display for ItemRarity {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
 #[derive(Component)]

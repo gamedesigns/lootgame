@@ -1,11 +1,10 @@
 use bevy::prelude::*;
-use crate::systems::update_hall_of_fame::update_hall_of_fame_system;
+use crate::ui::ui_system::ui_system;
 
 pub struct UiPlugin;
 
 impl Plugin for UiPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Update, update_hall_of_fame_system);
-        // Add UI-related systems
+        app.add_systems(Update, ui_system);
     }
 }
