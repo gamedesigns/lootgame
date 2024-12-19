@@ -1,6 +1,8 @@
-// src/main.rs
 use bevy::prelude::*;
 use plugins::{PlayerPlugin, LootBoxPlugin, ItemPlugin, LevelingPlugin, UiPlugin};
+use systems::update_hall_of_fame::update_hall_of_fame_system;
+use crate::resources::hall_of_fame::HallOfFame;
+use crate::resources::loot_box_pool::LootBoxPool;
 
 mod components;
 mod resources;
@@ -16,5 +18,8 @@ fn main() {
         .add_plugins(ItemPlugin)
         .add_plugins(LevelingPlugin)
         .add_plugins(UiPlugin)
+        .insert_resource(HallOfFame { scores: Vec::new() })
+        .insert_resource(LootBoxPool { pool: Vec::new() })
+        .add_systems(Update, update_hall_of_fame_system)
         .run();
 }
