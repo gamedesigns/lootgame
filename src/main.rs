@@ -19,7 +19,7 @@ fn main() {
         .add_plugins(LevelingPlugin)
         .add_plugins(UiPlugin)
         .insert_resource(HallOfFame { scores: Vec::new() })
-        .insert_resource(LootBoxPool { pool: Vec::new() })
+        .insert_resource(LootBoxPool)
         .add_systems(Update, update_hall_of_fame_system)
         .run();
 }
