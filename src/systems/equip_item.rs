@@ -4,7 +4,7 @@ use crate::components::item_components::Item;
 use crate::components::player_components::{Player, EquippedItems};
 
 pub fn equip_item_system(
-    mut commands: Commands,
+    _commands: Commands,
     mut player_query: Query<(&mut Player, &mut EquippedItems)>,
     item_query: Query<(Entity, &Item)>,
 ) {

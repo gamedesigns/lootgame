@@ -24,8 +24,8 @@ pub fn ui_system(
     for (i, (_, loot_box)) in loot_boxes.iter().enumerate() {
         println!("{}: {} Loot Box", i + 1, loot_box.rarity);
         for item_entity in &loot_box.items {
-            if let Ok(item) = item_query.get(*item_entity) {
-                println!("  - {}: {} (Value: {}, Score Bonus: {})", 
+            if let Ok((_, item)) = item_query.get(*item_entity) {
+                println!("  - {}: {} (Value: {}, Score Bonus: {})",
                     item.category, item.rarity, item.value, item.score_bonus);
             }
         }
@@ -33,7 +33,7 @@ pub fn ui_system(
 
     println!("\nEquipped Items:");
     for (_, item) in items.iter() {
-        println!("{}: {} (Value: {}, Score Bonus: {})", 
+        println!("{}: {} (Value: {}, Score Bonus: {})",
             item.category, item.rarity, item.value, item.score_bonus);
     }
 
