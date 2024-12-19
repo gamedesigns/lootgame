@@ -1,14 +1,15 @@
+// src/components/item_components.rs
 use bevy::prelude::*;
 use std::fmt;
 
-#[derive(Component, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Component, Clone, Copy, PartialEq, Eq, Hash, Debug)]
 pub enum ItemCategory {
     BodyArmor,
     Helmet,
     Weapon,
     Shield,
     Potion,
-    Equipent,
+    Equipment,
 }
 
 impl fmt::Display for ItemCategory {
@@ -17,7 +18,7 @@ impl fmt::Display for ItemCategory {
     }
 }
 
-#[derive(Component, Clone, Copy, PartialEq, Eq)]
+#[derive(Component, Clone, Copy, PartialEq, Eq, Debug)]
 pub enum ItemRarity {
     Common,
     Uncommon,

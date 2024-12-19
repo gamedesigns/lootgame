@@ -1,3 +1,4 @@
+// src/systems/sell_item.rs
 use bevy::prelude::*;
 use crate::components::item_components::Item;
 use crate::components::player_components::{Player, EquippedItems};
@@ -12,7 +13,7 @@ pub fn sell_item_system(
 
     for (item_entity, item) in items {
         player.money += item.value;
-        equipped_items.items.retain(|&x, _| x != item_entity);
+        equipped_items.items.retain(|_, entity| *entity != item_entity);
         commands.entity(item_entity).despawn();
     }
 }

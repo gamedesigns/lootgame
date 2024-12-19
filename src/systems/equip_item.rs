@@ -1,3 +1,4 @@
+// src/systems/equip_item.rs
 use bevy::prelude::*;
 use crate::components::item_components::Item;
 use crate::components::player_components::{Player, EquippedItems};
@@ -12,7 +13,7 @@ pub fn equip_item_system(
 
     for (item_entity, item) in items {
         if let Some(old_item_entity) = equipped_items.items.get(&item.category) {
-            if let Ok(old_item) = commands.get_entity(*old_item_entity) {
+            if let Some(old_item) = commands.get_entity(*old_item_entity) {
                 player.score -= old_item.score_bonus;
             }
             equipped_items.items.insert(item.category, item_entity);

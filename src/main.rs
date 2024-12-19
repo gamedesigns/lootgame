@@ -1,3 +1,4 @@
+// src/main.rs
 use bevy::prelude::*;
 use plugins::{PlayerPlugin, LootBoxPlugin, ItemPlugin, LevelingPlugin, UiPlugin};
 
@@ -10,10 +11,10 @@ mod ui;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugin(PlayerPlugin)
-        .add_plugin(LootBoxPlugin)
-        .add_plugin(ItemPlugin)
-        .add_plugin(LevelingPlugin)
-        .add_plugin(UiPlugin)
+        .add_plugins(PlayerPlugin)
+        .add_plugins(LootBoxPlugin)
+        .add_plugins(ItemPlugin)
+        .add_plugins(LevelingPlugin)
+        .add_plugins(UiPlugin)
         .run();
 }

@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use std::fmt;
 
-#[derive(Component, Clone, Copy, PartialEq, Eq)]
+#[derive(Component, Clone, Copy, PartialEq, Eq, Debug)]
 pub enum LootBoxRarity {
     Common,
     Uncommon,
